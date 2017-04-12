@@ -1,0 +1,13 @@
+{
+  "name": "乐闲蚁",
+  "short_name": "乐",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "assets/img/appicon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#ff9933",
+  "theme_color": "#ff9933"
+}

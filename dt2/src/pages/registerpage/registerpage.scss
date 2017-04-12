@@ -1,0 +1,45 @@
+registerpage {
+  .main {
+    .pwd-box {
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .pwd {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  .item-map {
+    .div-map {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+      margin-top: 80px;
+    }
+  }
+
+  .prinary {
+    text-align: right;
+  }
+
+  ion-row {
+    padding: 0 5px;
+  }
+  .select-ios,.select-md{
+    padding:0px;
+  }
+  .select-ios .select-icon .select-icon-inner{
+    left:2px;
+  }
+  .item-md{
+    padding-left:0px;
+  }
+  .select-md .select-icon .select-icon-inner{
+    left:2px;
+  }
+  .text-input-ios,.text-input-md{
+    margin-bottom: 0px ;
+  }
+}

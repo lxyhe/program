@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-navbar color="lexianyicolor">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>首页</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="funnel"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)" pullMax="1920" >
+    <ion-refresher-content pullingText="下拉刷新" refreshingText="加载数据中...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-slides #mySlider  [options]="mySlideOptions" style="width:100%;height:160px">
+    <ion-slide *ngFor="let bannar1 of pagedata.list.Items | bannarhomepage: {}">
+      <img class="itemImg" [src]="bannar1.Img" />
+    </ion-slide>
+  </ion-slides>
+
+   <div class="funnel">
+    <ion-row>
+      <ion-col  width-20 (click)="CatePage()">
+        <span class="restaurant">
+        <ion-icon name="restaurant"></ion-icon>
+        </span>
+        美食
+      </ion-col>
+      <ion-col width-20 (click)="FarmHousePage()">
+        <span class="nutrition">
+        <ion-icon name="nutrition"></ion-icon>
+        </span>
+        农家乐
+      </ion-col>
+      <ion-col  width-20 (click)="EntertainmentPage()">
+        <span class="game-controller-b">
+        <ion-icon name="game-controller-b"></ion-icon>
+        </span>
+        休闲娱乐
+      </ion-col>
+      <ion-col  width-20 (click)="TourPage()">
+        <span class="car">
+        <ion-icon name="car"></ion-icon>
+        </span>
+        旅游
+      </ion-col>
+      <ion-col  width-20 (click)="OutDoorPage()">
+        <span class="partly-sunny">
+        <ion-icon name="partly-sunny"></ion-icon>
+        </span>
+        户外
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let item of pagedata.list.Items| loadingpipe:{multiple:loadnum,showcontent:expression} | orderbyLngLat : { Lng: mygeo.currPos.coords.longitude ,Lat: mygeo.currPos.coords.latitude,type:pagetype,typeother:pagetypeother,tog:clicktoggle  }" (click)="goToSessionDetail(item)" [attr.track]="item.State | togametypekey:null">
+      <ion-thumbnail item-right>
+        <img [src]="item.Img" />
+      </ion-thumbnail>
+      <h2>{{item.Title}}</h2>
+      <h3>{{item.Address}}</h3>
+
+      <span>{{item.State | togametypename:null}}</span>
+    </ion-item>
+    <ion-item  style="text-align:center" *ngIf="expression">
+        没有更多数据显示了...
+    </ion-item>
+  </ion-list>
+
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="expression1">
+    <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingIcon="arrow-dropdown"
+    loadingText="加载更多..."
+    >
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+</ion-content>

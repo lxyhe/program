@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/cfdd3db404999e24047ccd0d74a71c411f02ca3b/urijs/URIjs.d.ts",
+    "raw": "registry:dt/urijs#1.15.1+20160928213347",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/cfdd3db404999e24047ccd0d74a71c411f02ca3b/urijs/URIjs.d.ts"
+  }
+}

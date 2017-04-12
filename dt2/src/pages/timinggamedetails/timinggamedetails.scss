@@ -1,0 +1,64 @@
+.ordergamepreview-header {
+  background-color: #434954;
+  padding: 1px;
+  width: 100%;
+
+  //min-height: 150px;
+  text-align: center;
+}
+
+.ordergamepreview-header img {
+
+  display:block;
+  // max-width: 200px;
+  // min-height: 115px;
+  // margin-left: -15px;
+  // padding: 25px 0 20px 0;
+}
+
+.ordergamepreview-s{
+  background-color: #434954;
+  padding: 0px;
+  width: 100%;
+
+  //min-height: 150px;
+  text-align: center;
+}
+
+.ordergamepreview-s img {
+
+  display:block;
+  // max-width: 200px;
+  // min-height: 115px;
+  // margin-left: -15px;
+  // padding: 25px 0 20px 0;
+}
+
+.ordergamepreview-info p {
+  color: #697072;
+  text-align: left;
+}
+
+.ordergamepreview-info div {
+  padding: 5px;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.ordergamepreview-info ion-icon {
+  color: color($colors,primary);
+  width: 20px;
+}
+
+.ios .ordergamepreview-info {
+  text-align: center;
+}
+
+.ios .ordergamepreview-info div {
+  display: inline-block;
+}
+
+.ios .ordergamepreview-info ion-icon {
+  width: auto;
+  margin-right: 10px;
+}

@@ -1,0 +1,1 @@
+jarsigner -verbose -keystore C:\Users\kakam\Desktop\com.lexianyi.dt.keystore -signedjar C:\Users\kakam\Desktop\dt2\platforms\android\build\outputs\apk\a.apk C:\Users\kakam\Desktop\dt2\platforms\android\build\outputs\apk\android-armv7-release-unsigned.apk  comlexianyidt

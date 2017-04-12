@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="lexianyicolor">
+    <ion-title>{{qrinfo.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+<ion-card>
+
+  <ion-item *ngIf="qrinfo.avatarpic != ''">
+    <ion-avatar item-left>
+      <img [src]="qrinfo.avatarpic" />
+    </ion-avatar>
+    <h2>{{qrinfo.avatarname}}</h2>
+    <p>{{qrinfo.avatarinfo}}</p>
+  </ion-item>
+
+  <img [src]="qrinfo.pic" />
+
+  <ion-card-content *ngIf="qrinfo.txt != ''">
+    <p>{{qrinfo.txt}}</p>
+  </ion-card-content>
+
+</ion-card>
+
+</ion-content>

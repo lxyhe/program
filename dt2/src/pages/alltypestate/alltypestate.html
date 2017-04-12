@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar color="lexianyicolor">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>子分类</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="funnel"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <div class="funnel">
+   <ion-row>
+     <ion-col  width-20 (click)="SubCatePage()">
+       <span class="restaurant">
+      <ion-icon [name]="icon1"></ion-icon>
+       </span>
+       {{this.subpagedatatitle.title1}}
+     </ion-col>
+     <ion-col width-20 (click)="SubFarmHousePage()">
+       <span class="nutrition">
+       <ion-icon [name]="icon2"></ion-icon>
+       </span>
+        {{this.subpagedatatitle.title2}}
+     </ion-col>
+     <ion-col  width-20 (click)="SubEntertainmentPage()">
+       <span class="game-controller-b">
+       <ion-icon [name]="icon3"></ion-icon>
+       </span>
+        {{this.subpagedatatitle.title3}}
+     </ion-col>
+     <ion-col  width-20 (click)="SubTourPage()">
+       <span class="car">
+       <ion-icon [name]="icon4"></ion-icon>
+       </span>
+        {{this.subpagedatatitle.title4}}
+     </ion-col>
+     <ion-col  width-20 (click)="SubOutDoorPage()">
+       <span class="partly-sunny">
+       <ion-icon [name]="icon5"></ion-icon>
+       </span>
+        {{this.subpagedatatitle.title5}}
+     </ion-col>
+   </ion-row>
+ </div>
+ <ion-refresher (ionRefresh)="doRefresh($event)">
+   <ion-refresher-content pullingText="下拉刷新" refreshingText="加载数据中...">
+   </ion-refresher-content>
+ </ion-refresher>
+
+ <ion-list>
+   <ion-item *ngFor="let item of subpagedata.subpage.list.Items | orderbyLngLat : { Lng: mygeo.currPos.coords.longitude ,Lat: mygeo.currPos.coords.latitude,type:pagetype,typeother:pagetypeother,tog:clicktoggle,subdatatype:subpagedatatype,subpagedataclass:subpageclass}" (click)="goToSessionDetail(item)" [attr.track]="item.State | togametypekey:null">
+     <ion-thumbnail item-right>
+       <img [src]="item.Img" />
+     </ion-thumbnail>
+     <h2>{{item.Title}}</h2>
+     <h3>{{item.Address}}</h3>
+
+     <span>{{item.State | togametypename:null}}</span>
+   </ion-item>
+
+   <!-- <ion-item *ngFor="let item of Items | orderbyLngLat : { Lng: mygeo.currPos.coords.longitude ,Lat: mygeo.currPos.coords.latitude,type:pagetype,typeother:pagetypeother,tog:clicktoggle,subdatatype:subpagedatatype}" >
+
+     <h2>{{item.MainType}}</h2>
+     <h3>{{item.type}}</h3>
+   </ion-item> -->
+ </ion-list>
+</ion-content>

@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar color="lexianyicolor">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>注册</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-content class="main">
+    <ion-list inset>
+      <ion-item class="item-map">
+        <div class="div-map">
+          <img src="assets/img/logo.svg" />
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-icon padding-top name="contact" isActive="false" item-left></ion-icon>
+        <!-- <ion-label floating>用户名称</ion-label> -->
+        <ion-input [(ngModel)]="username" type="text" placeholder="用户名称"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon padding-top name="unlock" item-left isActive="false"></ion-icon>
+        <!-- <ion-label floating>用户密码</ion-label> -->
+        <ion-input [(ngModel)]="password" type="password" placeholder="用户密码"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon padding-top name="unlock" item-left isActive="false"></ion-icon>
+        <!-- <ion-label floating>确认密码</ion-label> -->
+        <ion-input [(ngModel)]="affirmpassword" type="password" placeholder="确认密码"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon padding-top name="person" item-left isActive="false"></ion-icon>
+        <!-- <ion-label >用户昵称</ion-label> -->
+        <ion-input [(ngModel)]="nickname" type="text" placeholder="用户昵称"></ion-input>
+      </ion-item>
+
+      <!--
+      <ion-item style="border-bottom:1px solid #C8C7CC">
+        <ion-icon padding-top name="transgender" item-left isActive="false"></ion-icon>
+
+        <ion-select placeholder="用户性别" class="usersex" [(ngModel)]="sex" (ionChange)="selector()" okText="确认" cancelText="返回">
+          <ion-option value="1">男</ion-option>
+          <ion-option value="2">女</ion-option>
+        </ion-select>
+      </ion-item>
+      -->
+
+    </ion-list>
+    <div padding>
+      <button ion-button block (click)="goregister()">提交</button>
+    </div>
+
+  </ion-content>

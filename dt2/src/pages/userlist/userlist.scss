@@ -1,0 +1,21 @@
+$categories: (
+ s3: color($colors, primary),
+ s0: #AC282B,
+ s1: #8E8D93,
+ s2: #FE4C52,
+ s4: #FD8B2D,
+ s5: #FED035,
+);
+
+@function auxiliary-categories() {
+  @return map-remove($categories);
+}
+
+userlist {
+  @each $track, $value in auxiliary-categories() {
+   ion-item[track=#{$track}] {
+     border-left: 2px solid $value;
+     padding-left: 10px;
+   }
+  }
+}

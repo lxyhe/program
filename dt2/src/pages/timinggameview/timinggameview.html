@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar lexianyicolor>
+    <ion-title>{{session.Title}}</ion-title>
+
+
+    <ion-buttons end>
+      <button ion-button danger outline (click)="publish()" [disabled]="disabledButton">
+        确定发布
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item (click)="getmap()">
+      <h2>{{session.Address}}</h2>
+
+      <h3>{{session.Place}}</h3>
+
+
+      <ion-icon name="pin" item-left></ion-icon>
+
+      <div item-right>¥{{session.Price/100}}</div>
+
+    </ion-item>
+
+  </ion-list>
+
+
+
+  <div padding class="ordergamepreview-info">
+    <div>
+      <ion-icon name="telephone"></ion-icon>
+      电话:{{session.Phone}}
+    </div>
+    <br/>
+
+
+  </div>
+
+  <div *ngFor="let d of session.Details" class="ordergamepreview-s">
+    <img [src]="d" />
+  </div>
+
+</ion-content>

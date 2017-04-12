@@ -1,0 +1,28 @@
+<!-- main in menu -->
+<ion-menu id="main" [content]="content">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>乐闲蚁</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="outer-content">
+
+    <ion-list>
+      <ion-list-header>
+        快速菜单
+      </ion-list-header>
+      <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">
+        <ion-icon item-left [name]="p.icon"></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+
+<!-- main navigation -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>

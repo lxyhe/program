@@ -1,0 +1,150 @@
+<ion-header>
+  <ion-navbar color="lexianyicolor">
+    <ion-title>新建预约活动</ion-title>
+
+    <ion-buttons end>
+      <button ion-button [disabled]="foundbtn" outline (click)="create()">
+        创建
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed primary>标题</ion-label>
+      <ion-input type="text" [(ngModel)]="title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>地址</ion-label>
+      <ion-input type="text" [(ngModel)]="addr"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button full (click)="setmap()">设置地址:{{place}}</button>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label fixed>号码</ion-label>
+      <ion-input type="tel" [(ngModel)]="phone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>开始时间</ion-label>
+      <ion-input type="datetime-local" [(ngModel)]="starttime"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>结束时间</ion-label>
+      <ion-input type="datetime-local" [(ngModel)]="endtime"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>人数上限</ion-label>
+      <ion-input type="number" [(ngModel)]="maxnum"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>人数下限</ion-label>
+      <ion-input type="number" [(ngModel)]="minnum"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>活动价格</ion-label>
+      <ion-input type="number" [(ngModel)]="price"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>邀请码</ion-label>
+      <ion-input type="number" [(ngModel)]="pcode"></ion-input>
+    </ion-item>
+    <ion-item class="selectclass">
+      <ion-label>活动类型</ion-label>
+      <ion-select placeholder="请选择您的活动类型" [(ngModel)]="activitytype" okText="确认" cancelText="返回" (ionChange)="selector()">
+        <ion-option  value=1 selected="true">美食</ion-option>
+        <ion-option value=2>农家乐</ion-option>
+        <ion-option value=3>休闲娱乐</ion-option>
+        <ion-option value=4>旅游</ion-option>
+        <ion-option value=5>户外</ion-option>
+        <ion-option value=0>其他</ion-option>
+       </ion-select>
+    </ion-item>
+    <ion-item *ngIf="subshowbutton" class="selectclass">
+      <ion-label>活动子类型</ion-label>
+      <!-- <ion-input type="text" [(ngModel)]="subtype1"></ion-input> -->
+        <ion-select   placeholder="请选择您的子活动类型" [(ngModel)]="subactivitytype" okText="确认" cancelText="返回" (ionChange)="subselector()">
+         <!-- <ion-option type="text"  selected="true" ></ion-option> -->
+         <ion-option [value] = "key.index" *ngFor="let key of typelist">{{key.title}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <!--
+  <ion-list radio-group [(ngModel)]="aa">
+    <ion-list-header>
+      付款方式
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label fixed>AA付款</ion-label>
+      <ion-radio value="AA"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>男生付款</ion-label>
+      <ion-radio value="MAN"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>女生付款</ion-label>
+      <ion-radio value="WOMAN" disabled="false"></ion-radio>
+    </ion-item>
+  </ion-list>
+  -->
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed primary>标题图片</ion-label>
+      <ion-input type="text" [(ngModel)]="titlepic"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>陈列内容</ion-label>
+      <ion-input type="text" [(ngModel)]="details_x_1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>陈列内容</ion-label>
+      <ion-input type="text" [(ngModel)]="details_x_2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>陈列内容</ion-label>
+      <ion-input type="text" [(ngModel)]="details_x_3"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>陈列内容</ion-label>
+      <ion-input type="text" [(ngModel)]="details_x_4"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>陈列内容</ion-label>
+      <ion-input type="text" [(ngModel)]="details_x_5"></ion-input>
+    </ion-item>
+
+
+
+  </ion-list>
+
+
+</ion-content>

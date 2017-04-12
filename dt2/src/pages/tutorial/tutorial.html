@@ -1,0 +1,35 @@
+<ion-header no-shadow>
+  <ion-navbar color="lexianyicolor">
+    <ion-buttons end *ngIf="showSkip">
+      <button ion-button color="light" outline (click)="startApp()" [hidden]="iswechathidden"  [disabled]="wechatDisabled">微信快速登陆</button>
+
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-slides [options]="{pager: true}" (ionWillChange)="onSlideChangeStart($event)">
+    <ion-slide *ngFor="let slide of slides">
+      <img [src]="slide.image" class="slide-image"/>
+      <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+      <p [innerHTML]="slide.description"></p>
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-4.png" class="slide-image"/>
+      <h2 class="slide-title">开启你的活动之旅</h2>
+
+
+        <button ion-button block icon-right clear [navPush]="gologin">
+          账户登陆
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+
+
+      <button ion-button icon-right large clear (click)="startApp()" [hidden]="iswechathidden" [disabled]="wechatDisabled">
+        微信快速登陆
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+
+    </ion-slide>
+  </ion-slides>
+</ion-content>

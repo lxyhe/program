@@ -1,0 +1,130 @@
+apptemplate{
+  @mixin makeIcon($arg, $val) {
+  .ion-ios-#{$arg}:before ,
+  .ion-ios-#{$arg}-circle:before ,
+  .ion-ios-#{$arg}-circle-outline:before ,
+  .ion-ios-#{$arg}-outline:before ,
+  .ion-md-#{$arg}:before ,
+  .ion-md-#{$arg}-circle:before ,
+  .ion-md-#{$arg}-circle-outline:before ,
+  .ion-md-#{$arg}-outline:before  {
+    content: $val;
+    font-size: 26px;
+    position: relative;
+    top: 10px;
+    font-size: 30px;
+    color: #fff;
+  }
+  }
+
+  .ion-icon-bar:before {
+    content: "\e900";
+  }
+  .ion-icon-barbecue:before {
+    content: "\e901";
+  }
+  .ion-icon-buffetdinner:before {
+    content: "\e902";
+  }
+  .ion-icon-Bungee:before {
+    content: "\e903";
+  }
+  .ion-icon-camping:before {
+    content: "\e904";
+  }
+  .ion-icon-campout:before {
+    content: "\e905";
+  }
+  .ion-icon-chafing:before {
+    content: "\e906";
+  }
+  .ion-icon-deskplay:before {
+    content: "\e907";
+  }
+  .ion-icon-Disco:before {
+    content: "\e908";
+  }
+  .ion-icon-divtour:before {
+    content: "\e909";
+  }
+  .ion-icon-ecologicalvillage:before {
+    content: "\e90a";
+  }
+  .ion-icon-fairground:before {
+    content: "\e90b";
+  }
+  .ion-icon-greens:before {
+    content: "\e90c";
+  }
+  .ion-icon-indooractivity:before {
+    content: "\e90d";
+  }
+  .ion-icon-KTV:before {
+    content: "\e90e";
+  }
+  .ion-icon-leisurefarm:before {
+    content: "\e90f";
+  }
+  .ion-icon-onedaytour:before {
+    content: "\e910";
+  }
+  .ion-icon-pick:before {
+    content: "\e911";
+  }
+  .ion-icon-roundplay:before {
+    content: "\e912";
+  }
+  .ion-icon-scenic:before {
+    content: "\e913";
+  }
+  .ion-icon-selfdriving:before {
+    content: "\e914";
+  }
+  .ion-icon-ski:before {
+    content: "\e915";
+  }
+  .ion-icon-snack:before {
+    content: "\e916";
+  }
+  .ion-icon-vacational:before {
+    content: "\e917";
+  }
+  .ion-icon-waterpark:before {
+    content: "\e918";
+  }
+
+
+
+  @include makeIcon(icon-chafing,'\e906')
+  @include makeIcon(icon-buffetdinner,'\e902')
+  @include makeIcon(icon-barbecue,'\e901')
+  @include makeIcon(icon-snack,'\e916')
+  @include makeIcon(icon-greens,'\e90c')
+
+  @include makeIcon(icon-pick,'\e911')
+  @include makeIcon(icon-leisurefarm,'\e90f')
+  @include makeIcon(icon-ecologicalvillage,'\e90a')
+  @include makeIcon(icon-Bungee,'\e903')
+  @include makeIcon(icon-waterpark,'\e918')
+
+
+  @include makeIcon(icon-deskplay,'\e907')
+  @include makeIcon(icon-bar, '\e900')
+  @include makeIcon(icon-Disco, '\e908')
+  @include makeIcon(icon-indooractivity, '\e90d')
+  @include makeIcon(icon-KTV, '\e90e')
+
+  @include makeIcon(icon-onedaytour, '\e910')
+  @include makeIcon(icon-vacational, '\e917')
+  @include makeIcon(icon-roundplay, '\e912')
+  @include makeIcon(icon-fairground, '\e90b')
+  @include makeIcon(icon-scenic, '\e913')
+
+  @include makeIcon(icon-divtour, '\e909')
+  @include makeIcon(icon-selfdriving, '\e914')
+  @include makeIcon(icon-camping, '\e904')
+  @include makeIcon(icon-ski, '\e915')
+  @include makeIcon(icon-campout, '\e905')
+
+
+}

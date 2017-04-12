@@ -1,0 +1,8 @@
+<ion-tabs color="lexianyicolorthin" #myTabs [selectedIndex]="mySelectedIndex"  tabsHighlight="true" >
+  <ion-tab [root]="tab1Root" tabTitle="首页" [rootParams]="ordergame.mainpage" swipeBackEnabled="true" tabIcon="home"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="预约活动" [rootParams]="ordergame.mainpage" swipeBackEnabled="true" tabIcon="calendar"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="正在活动" [rootParams]="ordergame.secpage"  swipeBackEnabled="true" tabIcon="contacts"></ion-tab>
+  <ion-tab [root]="tab5Root" tabTitle="即时活动" [rootParams]="timinggame.mainpage"  swipeBackEnabled="true" tabIcon="compass"></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="我的功能" tabIcon="map"></ion-tab>
+
+</ion-tabs>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="lexianyicolor">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>管理预约活动</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+
+
+
+
+    <ion-card-content>
+      <ion-list>
+        <ion-list-header>
+          功能
+        </ion-list-header>
+
+        <button ion-item (click)="getReady()">
+          <h3>准备进行的活动</h3>
+        </button>
+        <button ion-item (click)="getStart()">
+          <h3>正在进行的活动</h3>
+        </button>
+        <button ion-item (click)="getFinish()">
+          <h3>已经完成的活动</h3>
+        </button>
+        <button ion-item (click)="getCancel()">
+          <h3>已经取消的活动</h3>
+        </button>
+
+      </ion-list>
+    </ion-card-content>
+
+
+  </ion-card>
+
+</ion-content>

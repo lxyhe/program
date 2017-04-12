@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      个人信息
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <ion-card>
+    <img src="assets/img/mybackground.jpg" />
+    <div class="card-title">
+      <img class="headerImg" src="{{headerurl}}" alt="" />
+    </div>
+  </ion-card>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon name="leaf" item-left></ion-icon>
+      国家:{{Country}}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="leaf" item-left></ion-icon>
+      省份:{{Province}}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="leaf" item-left></ion-icon>
+      城市:{{City}}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="leaf" item-left></ion-icon>
+      昵称:{{name}}
+    </ion-item>
+    <ion-item>
+      <ion-icon name="leaf" item-left></ion-icon>
+      性别:{{sex}}
+    </ion-item>
+
+  </ion-list>
+
+
+</ion-content>

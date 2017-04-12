@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-navbar color="lexianyicolor">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>我</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+
+
+
+
+
+    <ion-card-content [hidden]="auth.Group===0">
+      <ion-list>
+        <ion-list-header class="fontcolor">
+          组织者功能
+        </ion-list-header>
+
+
+        <ion-item actions>
+
+          <button ion-button (click)="mgrOrderGame()" clear item-left>
+                <ion-icon name="ion-social-twitter"></ion-icon>
+                管理我的预约活动
+            </button>
+
+          <button ion-button (click)="newOrderGame()" item-right>
+                <ion-icon name="share"></ion-icon>
+                新建预约活动
+            </button>
+        </ion-item>
+        <ion-item actions>
+          <button ion-button (click)="mgrOrderGameQuick()" clear item-left>
+            <ion-icon name="ion-social-twitter"></ion-icon>
+            管理我的即时活动
+        </button>
+
+          <button ion-button (click)="newOrderGameQuick()" item-right>
+            <ion-icon name="share"></ion-icon>
+            新建即时活动
+        </button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+    <ion-card-content [hidden]="!(auth.Group===1)">
+      <ion-list>
+        <ion-list-header>
+          管理员功能
+        </ion-list-header>
+
+
+        <ion-item actions>
+
+          <button ion-button clear item-left>
+                <ion-icon name="ion-social-twitter"></ion-icon>
+                管理发布者
+            </button>
+
+          <button ion-button item-right (click)="setPublish()">
+                <ion-icon name="share"></ion-icon>
+                设置发布者
+            </button>
+        </ion-item>
+
+      </ion-list>
+    </ion-card-content>
+
+
+    <ion-card-content>
+      <ion-list>
+        <ion-list-header class="fontcolor">
+          功能
+        </ion-list-header>
+
+        <button ion-item (click)="myQR()">
+          <h3>我的二维码</h3>
+        </button>
+
+        <button ion-item (click)="getParty()">
+          <h3>我参加的预约活动</h3>
+        </button>
+
+        <button ion-item (click)="getTParty()">
+          <h3>我参加的限时活动</h3>
+        </button>
+
+        <button ion-item (click)="getmyMsg()">
+            <h3>我的个人信息</h3>
+        </button>
+
+      </ion-list>
+    </ion-card-content>
+
+
+  </ion-card>
+
+</ion-content>

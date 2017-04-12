@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar color="lexianyicolor">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{pagedata.title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="funnel"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <!-- <div class="funnel">
+    <ion-row>
+      <ion-col (click)="alltype($event)" width-33>
+        全类型
+      </ion-col>
+      <ion-col (click)="alltime($event)" width-33>
+        全时段
+      </ion-col>
+      <ion-col (click)="allprice($event)" width-33>
+        全价格
+      </ion-col>
+    </ion-row>
+  </div> -->
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)"      pullMax="1920" >
+    <ion-refresher-content pullingText="下拉刷新" refreshingText="加载数据中..." >
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+
+    <ion-item *ngFor="let item of pagedata.list.Items| loadingpipe:{multiple:loadnum,showcontent:expression}  | orderbyLngLat : { Lng: mygeo.currPos.coords.longitude ,Lat: mygeo.currPos.coords.latitude,type:pagetype,typeother:pagetypeother,tog:clicktoggle  }" (click)="goToSessionDetail(item)" [attr.track]="item.State | togametypekey:null">
+      <ion-thumbnail item-right>
+        <img [src]="item.Img" />
+      </ion-thumbnail>
+      <h2>{{item.Title}}</h2>
+      <h3>{{item.Address}}</h3>
+
+      <span>{{item.State | togametypename:null}}</span>
+    </ion-item>
+    <ion-item  style="text-align:center" *ngIf="expression">
+        没有更多数据显示了...
+    </ion-item>
+
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="expression1">
+    <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingIcon="arrow-dropdown"
+    loadingText="加载更多..."
+    >
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

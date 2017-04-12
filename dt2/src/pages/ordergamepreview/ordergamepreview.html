@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar color="lexianyicolor">
+    <ion-title>{{session.Title}}</ion-title>
+
+
+    <ion-buttons end>
+      <button ion-button danger outline (click)="publish()" [disabled]="disabledButton">
+        确定发布
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item (click)="getmap()">
+      <h2>{{session.Address}}</h2>
+
+      <h3>{{session.Place}}</h3>
+      <!--<h3>{{session.Starttime*1000-8*60*60*1000}} - {{session.Endtime*1000-8*60*60*1000}}</h3>-->
+      <h3>{{session.Starttime*1000-8*60*60*1000 | date:"MM/dd HH:mm"}} - {{session.Endtime*1000-8*60*60*1000 | date:"MM/dd HH:mm"}}</h3>
+
+      <ion-icon name="pin" item-left></ion-icon>
+
+      <div item-right>¥{{session.Price/100}}</div>
+
+    </ion-item>
+
+  </ion-list>
+
+
+
+  <div padding class="ordergamepreview-info">
+    <div>
+      <ion-icon name="telephone"></ion-icon>
+      电话:{{session.Phone}}
+    </div>
+    <br/>
+
+
+    <div>
+      <ion-icon name="people"></ion-icon>
+      当前玩家:{{session.Nownum}}/{{session.Maxnum}}
+    </div>
+
+    <div>
+      <ion-icon name="people-outline"></ion-icon>
+      最小开始玩家:{{session.Minnum}}
+    </div>
+    <br/>
+
+  </div>
+
+  <div *ngFor="let d of session.Details" class="ordergamepreview-s">
+    <img [src]="d" />
+  </div>
+
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar lexianyicolor >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title >管理我的即时活动</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-list-header>
+          功能
+        </ion-list-header>
+        <button ion-item (click)="getOpen()">
+          <h3>开放的活动</h3>
+        </button>
+        <button ion-item (click)="getClose()">
+          <h3>关闭的活动</h3>
+        </button>
+        <button ion-item (click)="getFinish()">
+          <h3>完结的活动</h3>
+        </button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

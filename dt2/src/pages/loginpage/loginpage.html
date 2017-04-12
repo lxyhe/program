@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="lexianyicolor">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>登录</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="main">
+  <ion-list>
+    <ion-item class="item-map">
+      <div class="div-map">
+        <img src="assets/img/logo.svg" />
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-icon padding-top name="contact" item-left></ion-icon>
+      <ion-label floating>用户名</ion-label>
+      <ion-input [(ngModel)]="username" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon padding-top name="unlock" item-left item-left></ion-icon>
+      <ion-label floating>密码</ion-label>
+      <ion-input [(ngModel)]="password" type="password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div padding>
+    <button ion-button block (click)="login()">登陆</button>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-50 outline>
+        <!-- <button ion-button outline (click)="findpassword">
+          忘记密码
+        </button> -->
+      </ion-col>
+      <ion-col width-50 class="prinary">
+        <button ion-button outline (click)="register()">
+          免费注册
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/65b8a691f281ff2f58d5600621a3e226452c0a6d/protobufjs/protobufjs.d.ts",
+    "raw": "registry:dt/protobufjs#5.0.1+20161019142200",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/65b8a691f281ff2f58d5600621a3e226452c0a6d/protobufjs/protobufjs.d.ts"
+  }
+}

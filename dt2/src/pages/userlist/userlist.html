@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="lexianyicolor">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>参加活动人员列表</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item *ngFor="let item of pagedata.page.Items" [attr.track]="item.Sex | togametypekey:null">
+      <ion-thumbnail item-right>
+        <img [src]="item.Headimgurl" />
+      </ion-thumbnail>
+      <h2>{{item.Nickname}}</h2>
+      <span>{{item.Sex | togametypenamesex:null}} {{item.Country}} {{item.Province}} {{item.City}}</span>
+    </ion-item>
+
+
+  </ion-list>
+
+
+
+</ion-content>

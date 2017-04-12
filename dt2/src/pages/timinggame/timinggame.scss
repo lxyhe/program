@@ -1,0 +1,29 @@
+$categories: ( s3: color($colors, primary),
+ s0: #AC282B,
+ s1: #8E8D93,
+ s2: #FE4C52,
+ s4: #77C1E1,
+ s5: #FED035,
+ );
+@function auxiliary-categories() {
+   @return map-remove($categories);
+}
+
+timinggame {
+  @each $track, $value in auxiliary-categories() {
+    ion-item[track=#{$track}] {
+      border-left: 5px solid $value;
+      padding-left: 10px;
+    }
+  }
+  .funnel ion-col{
+    height:40px;
+    text-align: center;
+    line-height: 30px;
+    border:1px solid #FF9933;
+    margin-bottom: 1px;
+    background-color: #fff;
+  }
+
+
+}
